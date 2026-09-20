@@ -1,0 +1,39 @@
+---
+title: Home
+pagetitle: GeoHop — Spatial tools for Apache Hop
+page-layout: full
+title-block-banner: false
+body-classes: home-page
+---
+
+```{=html}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title">Spatial tools<br class="desktop-break"> and plugins for <span>Apache Hop</span></h1>
+    <p>Useful plugins, transforms and utilities to bring spatial data, geospatial processing and location intelligence to your Apache Hop pipelines.</p>
+    <div class="hero-actions">
+      <a class="action action-primary" href="plugins.html">Get Started <span aria-hidden="true">→</span></a>
+      <a class="action action-secondary" href="docs.html">Explore the Docs</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <img src="assets/spatial-horse.png" width="1536" height="1024" alt="A blue horse built from triangular facets, running above a pale alpine landscape and winding river." fetchpriority="high">
+  </div>
+</section>
+
+<section class="feature-grid" aria-label="Spatial capabilities">
+  <article class="feature-card">
+    <div class="feature-icon icon-blue" aria-hidden="true"><svg viewBox="0 0 48 48"><path fill="currentColor" d="M24 4C14.6 4 7 11.6 7 21c0 12 17 25 17 25s17-13 17-25C41 11.6 33.4 4 24 4Zm0 24a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"/></svg></div>
+    <div class="feature-content"><h2>Spatial Transforms</h2><p>Process, transform and enrich geospatial data in Apache Hop with easy-to-use plugins.</p><a href="plugins.html">Learn more <span aria-hidden="true">→</span></a></div>
+  </article>
+  <article class="feature-card">
+    <div class="feature-icon icon-blue" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5"><ellipse cx="24" cy="11" rx="15" ry="6"/><path d="M9 11v25c0 3.3 6.7 6 15 6s15-2.7 15-6V11M9 23c0 3.3 6.7 6 15 6s15-2.7 15-6M9 33c0 3.3 6.7 6 15 6s15-2.7 15-6"/></svg></div>
+    <div class="feature-content"><h2>Wide Data Support</h2><p>Work with common spatial formats (GeoJSON, WKT, shapefiles, etc.) and connect to spatial databases.</p><a href="docs.html">Learn more <span aria-hidden="true">→</span></a></div>
+  </article>
+  <article class="feature-card">
+    <div class="feature-icon icon-blue" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"><path d="m20 4-2 7-5 3-7-1-4 7 5 5v5l-3 6 6 6 7-3 5 1 5 5 7-3 1-8 3-4 7-3-1-8-7-2-4-4-1-7Z" transform="translate(2 0) scale(.92)"/><circle cx="24" cy="24" r="7"/></svg></div>
+    <div class="feature-content"><h2>Open and Extensible</h2><p>Open source, community-driven and easy to extend with new plugins and use cases.</p><a href="https://github.com/edigonzales/hop-plugins-site">Get involved <span aria-hidden="true">→</span></a></div>
+  </article>
+</section>
+
+```

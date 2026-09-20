@@ -1,0 +1,7 @@
+# Hero illustration
+
+Generated using the built-in Imagegen tool. Output: `spatial-horse.png`.
+
+## Prompt
+
+Create a premium website hero illustration, landscape 1536x1024, isolated on pure white. A beautiful dynamic running horse facing RIGHT, made entirely from crisp flat triangular low-poly facets, origami geometry. Full body including all four anatomically coherent slender bent running legs and hooves, elegant proud head with two pointed ears, long angular neck, flowing angular dark mane and polygon tail streaming left. Horse occupies central 75% width and 85% height. Rich navy, cobalt, medium blue, icy pale blue triangular facets, with especially dark navy legs, chest and muzzle, light blue shoulder planes. A few detached triangular fragments behind the tail and upper back, mostly pale blue with 3 warm apricot orange triangles. Very subtle pale icy blue polygon alpine mountains along the bottom and right behind the horse, a white winding river flowing toward lower right, small very pale apricot sun behind distant right mountains. White dominates background and image edges fade seamlessly to pure white. Sophisticated flat vector-like polygon artwork, no outlines, no texture, no 3D rendering. Match the striking blue polygon running horse aesthetic of a modern Apache Hop landing page. The horse is the unmistakable focal point, large, graceful, powerful; landscape extremely subtle. No text, no letters, no logos, no watermarks, no UI, no border. Keep entire horse and hooves comfortably inside frame.

@@ -1,0 +1,13 @@
+---
+title: Plugins
+---
+
+## Spatial plugins
+
+Spatial plugins and transforms for Apache Hop pipelines.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+[Explore the plugins](plugins.qmd) · [Read the docs](docs.qmd) · [See examples](examples.qmd)

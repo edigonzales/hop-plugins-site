@@ -1,0 +1,47 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - docs.qmd
+    - plugins.qmd
+    - examples.qmd
+  resources:
+    - assets/*.png
+    - assets/*.svg
+
+website:
+  title: GeoHop
+  search:
+    location: navbar
+    type: textbox
+  navbar:
+    title: GeoHop
+    logo: assets/mark.svg
+    background: white
+    collapse-below: lg
+    left:
+      - href: index.qmd
+        text: Home
+      - href: docs.qmd
+        text: Docs
+      - href: plugins.qmd
+        text: Plugins
+      - href: examples.qmd
+        text: Examples
+      - href: https://github.com/edigonzales/hop-plugins-site
+        text: Github
+        icon: box-arrow-up-right
+  page-footer:
+    left: '© 2026 GeoHop'
+    right: 'Open Source Always <i class="bi bi-heart-fill footer-heart" aria-hidden="true"></i>'
+    border: false
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    lang: en
+    language:
+      search-text-placeholder: Search docs…
+    toc: false
+    smooth-scroll: true
