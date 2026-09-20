@@ -32,7 +32,7 @@ body-classes: home-page
   </article>
   <article class="feature-card">
     <div class="feature-icon icon-blue" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"><path d="m20 4-2 7-5 3-7-1-4 7 5 5v5l-3 6 6 6 7-3 5 1 5 5 7-3 1-8 3-4 7-3-1-8-7-2-4-4-1-7Z" transform="translate(2 0) scale(.92)"/><circle cx="24" cy="24" r="7"/></svg></div>
-    <div class="feature-content"><h2>Open and Extensible</h2><p>Open source, community-driven and easy to extend with new plugins and use cases.</p><a href="https://github.com/edigonzales/hop-plugins-site">Get involved <span aria-hidden="true">→</span></a></div>
+    <div class="feature-content"><h2>Fits Your Pipelines</h2><p>Add spatial capabilities to your existing Apache Hop pipelines using familiar tools and workflows.</p><a href="examples.html">Explore examples <span aria-hidden="true">→</span></a></div>
   </article>
 </section>
 
