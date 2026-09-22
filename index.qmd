@@ -28,7 +28,7 @@ body-classes: home-page
   </article>
   <article class="feature-card">
     <div class="feature-icon icon-blue" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5"><ellipse cx="24" cy="11" rx="15" ry="6"/><path d="M9 11v25c0 3.3 6.7 6 15 6s15-2.7 15-6V11M9 23c0 3.3 6.7 6 15 6s15-2.7 15-6M9 33c0 3.3 6.7 6 15 6s15-2.7 15-6"/></svg></div>
-    <div class="feature-content"><h2>Wide Data Support</h2><p>Work with common spatial formats (GeoJSON, WKT, shapefiles, etc.) and connect to spatial databases.</p><a href="docs.html">Learn more <span aria-hidden="true">→</span></a></div>
+    <div class="feature-content"><h2>Wide Data Support</h2><p>Work with common spatial formats (INTERLIS, FileGeodatabase, GeoPackage, etc.) and connect to spatial databases.</p><a href="docs.html">Learn more <span aria-hidden="true">→</span></a></div>
   </article>
   <article class="feature-card">
     <div class="feature-icon icon-blue" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"><path d="m20 4-2 7-5 3-7-1-4 7 5 5v5l-3 6 6 6 7-3 5 1 5 5 7-3 1-8 3-4 7-3-1-8-7-2-4-4-1-7Z" transform="translate(2 0) scale(.92)"/><circle cx="24" cy="24" r="7"/></svg></div>
