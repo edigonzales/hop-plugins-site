@@ -1,13 +1,109 @@
 ---
 title: Plugins
+description: The eleven plugin projects included in the GeoHop distribution.
+toc: true
 ---
 
-## Spatial plugins
+All eleven projects below are **already installed** in distribution **{{< var distribution-version >}}** for Apache Hop {{< var hop-version >}}. [Install the complete distribution](docs.qmd) to get started.
 
-Spatial plugins and transforms for Apache Hop pipelines.
+The catalog groups related transforms and workflow actions by project. For projects with a published handbook and example collection, both links appear together. Their `examples/` folder contains runnable pipelines and instructions; the [website tutorials](examples.qmd) explain selected tasks step by step.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+## Vector Raster
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+[Included in the distribution]{.included-badge}
 
-[Explore the plugins](plugins.qmd) · [Read the docs](docs.qmd) · [See examples](examples.qmd)
+Read and write spatial vector data, and process rasters in Apache Hop. Includes tools for raster clipping, reprojection and zonal statistics.
+
+[GitHub repository](https://github.com/edigonzales/hop-vector-raster-plugin) · [Handbook (German)](https://edigonzales.github.io/hop-vector-raster-plugin/) · [Repository examples](https://github.com/edigonzales/hop-vector-raster-plugin/tree/main/examples)
+
+Runnable examples are in the repository’s `examples/` folder.
+
+## Data Inspector
+
+[Included in the distribution]{.included-badge}
+
+Inspect pipeline rows in tables and view geometry fields on a map. Explore multiple result layers and use sampling and cached results to investigate your data.
+
+[GitHub repository](https://github.com/edigonzales/hop-geometry-inspector-plugin) · [Handbook (English)](https://edigonzales.github.io/hop-geometry-inspector-plugin/data-inspector/main/) · [Repository examples](https://github.com/edigonzales/hop-geometry-inspector-plugin/tree/main/examples)
+
+Runnable examples are in the repository’s `examples/` folder.
+
+## Geometry Calculator
+
+[Included in the distribution]{.included-badge}
+
+Calculate geometry measurements, coordinates and metadata for each input row. Check validity and extract diagnostic information from your geometries.
+
+[GitHub repository](https://github.com/edigonzales/hop-geometry-calculator-plugin) · [Handbook (English)](https://edigonzales.github.io/hop-geometry-calculator-plugin/geometry-calculator/main/) · [Repository examples](https://github.com/edigonzales/hop-geometry-calculator-plugin/tree/main/examples)
+
+Runnable examples are in the repository’s `examples/` folder.
+
+## Geoprocessing
+
+[Included in the distribution]{.included-badge}
+
+Edit geometries, evaluate spatial relationships and combine layers. Provides operations for overlays, coverages and spatial aggregation.
+
+[GitHub repository](https://github.com/edigonzales/hop-geoprocessing-plugin)
+
+## INTERLIS
+
+[Included in the distribution]{.included-badge}
+
+Read, transform, validate and write INTERLIS XTF data. Work with typed rows while preserving INTERLIS structures and supported curve geometries.
+
+[GitHub repository](https://github.com/edigonzales/hop-interlis-plugin)
+
+## ili2db
+
+[Included in the distribution]{.included-badge}
+
+Run INTERLIS database operations for GeoPackage and PostgreSQL using ili2db. Available as both a pipeline transform and a workflow action.
+
+[GitHub repository](https://github.com/edigonzales/hop-ili2db-plugin)
+
+## ilivalidator
+
+[Included in the distribution]{.included-badge}
+
+Validate INTERLIS transfer files in pipelines and workflows. Use validation results to report problems or control subsequent processing.
+
+[GitHub repository](https://github.com/edigonzales/hop-ilivalidator-plugin)
+
+## Python / GraalPy
+
+[Included in the distribution]{.included-badge}
+
+Run Python code inside Apache Hop using an embedded GraalPy runtime. No separate Python installation is required.
+
+[GitHub repository](https://github.com/edigonzales/hop-python-plugin)
+
+## JSON Object Builder
+
+[Included in the distribution]{.included-badge}
+
+Build typed JSON objects from row fields and aggregate rows into JSON arrays. Supports inserting values into existing JSON documents.
+
+[GitHub repository](https://github.com/edigonzales/hop-json-object-builder-plugin) · [Handbook (English)](https://edigonzales.github.io/hop-json-object-builder-plugin/) · [Repository examples](https://github.com/edigonzales/hop-json-object-builder-plugin/tree/main/examples)
+
+Runnable examples are in the repository’s `examples/` folder.
+
+## Shared data types
+
+These two projects provide values used by the other plugins. They are dependencies included in the distribution, rather than standalone processing steps.
+
+### Geometry Type
+
+[Included in the distribution]{.included-badge}
+
+Adds the shared Geometry value type used by the spatial plugins. Allows geometry values to move between transforms in a pipeline.
+
+[GitHub repository](https://github.com/edigonzales/hop-geometry-type-plugin)
+
+### Raster Type
+
+[Included in the distribution]{.included-badge}
+
+Adds the shared Raster value type used by the raster transforms. Carries raster sources and processing operations through a pipeline.
+
+[GitHub repository](https://github.com/edigonzales/hop-raster-type-plugin)

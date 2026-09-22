@@ -32,6 +32,9 @@ jobs:
       - name: Render website
         run: quarto render
 
+      - name: Check website links and downloads
+        run: python3 scripts/check-site.py
+
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v4
         with:

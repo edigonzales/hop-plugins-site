@@ -1,13 +1,61 @@
 ---
 title: Examples
+description: Read and write six vector formats with downloadable Apache Hop pipelines.
+toc: true
 ---
 
-## Spatial workflows
+## Vector Reader → Vector Writer
 
-Examples of spatial workflows and geospatial pipelines.
+Start with three points, inspect their fields, and export them to a format your next tool can read. This series covers all six vector output formats in the [Vector Raster plugin](plugins.qmd#vector-raster), including the differences that matter when exchanging data.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Tested with Apache Hop **{{< var hop-version >}}**, distribution **{{< var distribution-version >}}**, on macOS ARM64 with Java 21. The examples use the local pipeline engine.
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+[Download all pipelines and sample data](downloads/vector-formats.zip){.btn .btn-primary}
 
-[Explore the plugins](plugins.qmd) · [Read the docs](docs.qmd) · [See examples](examples.qmd)
+## Set up the example project once
+
+1. [Install GeoHop](docs.qmd), then download and extract the whole example ZIP into a writable folder. Keep its `data`, `metadata`, `output` and pipeline files together.
+2. In Hop GUI, use the **Projects** controls to create a project named `vector-formats`. Set its **Home folder** to the extracted `vector-formats` folder and its configuration file to the included `project-config.json`. Use the existing configuration when prompted.
+3. Select that project. Open one of the `.hpl` files from its home folder.
+4. Use the included **local** pipeline run configuration. No environment or external database is required.
+
+All file settings use `${PROJECT_HOME}` plus a relative path. The plugins expect **local filesystem paths**; do not substitute a `file:` URI. The `output` directory is included and must remain present.
+
+Each main pipeline reads `data/sites.gpkg`, layer `sites`, and writes one independent output. Create examples deliberately refuse to replace an existing output. To repeat a tutorial, choose a new output name or remove only that tutorial's generated dataset. Keep `data/sites.gpkg` unchanged.
+
+## Meet the sample data
+
+These are three invented XY points in **EPSG:2056 — CH1903+ / LV95**. They are tutorial fixtures, not surveyed locations.
+
+| site_id | name | height_m | Easting | Northing |
+|---|---|---|---|---|
+| 1 | Aare | 430.50 | 2600000 | 1200000 |
+| 2 | Brücke | 432.25 | 2600100 | 1200050 |
+| 3 | Park | 428.75 | 2600200 | 1200100 |
+
+`height_m` is an ordinary numeric attribute, **not** a Z coordinate. The expected extent is `(2600000, 1200000)–(2600200, 1200100)`. The geometry output field is named `geometry`. The umlaut in `Brücke` makes text-encoding problems visible.
+
+## Choose a format
+
+| Tutorial | Read | Write | What you will learn |
+|---|---|---|---|
+| [Shapefile](examples/shapefile.qmd) | Yes | Yes | Sidecar files, DBF names, encoding and a read-back check. |
+| [GeoPackage](examples/geopackage.qmd) | Yes | Yes | Create a file, add a layer and append features. |
+| [File Geodatabase](examples/filegdb.qmd) | Yes | Yes | Dataset selection, generated IDs and coordinate precision. |
+| [FlatGeobuf](examples/flatgeobuf.qmd) | No | Yes | Indexed output, feature order and empty geometry rules. |
+| [Native spatial Parquet](examples/parquet.qmd) | No | Yes | Typed columns and native GEOMETRY/GEOGRAPHY support. |
+| [ArcInfo GENERATE](examples/generate.qmd) | No | Yes | Point records, coordinate formatting and attribute limits. |
+
+“Read” refers to **Vector Reader**, not to every other tool that might support the format. FlatGeobuf, Parquet and GENERATE are output-only in this plugin.
+
+## Shared settings and checks
+
+In **Vector Reader**, select the file, load/select the layer, inspect its schema and set **Geometry output field** to `geometry`. In **Vector Writer**, select that geometry field and the desired output format. Keep one writer copy per output dataset.
+
+::: {.callout-warning title="Assigning a CRS does not reproject coordinates"}
+The CRS setting describes coordinates already in the input. Assigning EPSG:4326 to these EPSG:2056 coordinates would not turn them into longitude and latitude. Reproject coordinates in a suitable upstream operation when the target CRS differs.
+:::
+
+Check feature counts, attributes, geometry type, coordinates and CRS after conversion. A successful pipeline alone does not prove that every source characteristic survived: formats differ in their handling of Z/M dimensions, curves, empty geometries and field types.
+
+The tutorials show real Hop dialogs from the documented distribution. General transform behaviour is covered in the [Vector Raster handbook (German)](https://edigonzales.github.io/hop-vector-raster-plugin/); additional runnable pipelines live in the repository's [examples folder](https://github.com/edigonzales/hop-vector-raster-plugin/tree/main/examples).

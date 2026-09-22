@@ -29,3 +29,9 @@ replay_pid*
 .DS_Store
 
 **/*.quarto_ipynb
+
+# Generated tutorial outputs
+/downloads/vector-formats/output/*
+!/downloads/vector-formats/output/README.txt
+/downloads/vector-formats/audit/
+/downloads/vector-formats/.hop/

@@ -1,13 +1,118 @@
 ---
-title: Docs
+title: Getting Started
+description: Install Apache Hop with the GeoHop spatial plugins already included.
+toc: true
 ---
 
-## Getting started
+## Apache Hop, ready for spatial data
 
-Documentation for spatial data processing with Apache Hop.
+Download one archive containing **Apache Hop {{< var hop-version >}} and all eleven [plugin projects](plugins.qmd)**. Geometry Type, Raster Type and the other shared dependencies are already installed. You do not need GDAL, Maven, a separate Python installation or a build from source.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+::: {.callout-note title="Snapshot distribution"}
+This is a community distribution containing pre-release plugins, not an official Apache binary release. The documented build is **{{< var distribution-version >}}**, released {{< var release-date >}}. Release information checked {{< var checked-date >}}. Try your pipelines with this version before upgrading an existing project.
+:::
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+## 1. Check the requirements
 
-[Explore the plugins](plugins.qmd) · [Read the docs](docs.qmd) · [See examples](examples.qmd)
+- **Java 21 recommended.** The distribution's release checks also cover Java 25 on Linux, macOS and Windows. Choose a Java installation matching your operating system and CPU architecture (for example, ARM64 on Apple Silicon).
+- A graphical desktop to use Hop GUI. On Linux this includes a working graphical session and the system libraries required by SWT/GTK.
+- A writable folder for Hop and a separate writable folder for your projects and output data. Available memory and disk space must accommodate your datasets; large overlays and indexed exports can require substantially more memory than small examples.
+
+Install a Java 21 JDK from [Eclipse Temurin](https://adoptium.net/temurin/releases/?version=21) if you do not already have one. Open a terminal (PowerShell on Windows) and check:
+
+```sh
+java -version
+```
+
+The reported major version should be 21 or 25. See the [Apache Hop installation documentation](https://hop.apache.org/manual/latest/getting-started/hop-download-install.html) for background.
+
+## 2. Download the distribution
+
+[Download the documented ZIP]({{< var archive-url >}}){.btn .btn-primary}
+
+Archive: **{{< var archive-name >}}**.
+
+You can also open the [documented release]({{< var release-url >}}) and select that ZIP under **Assets**. The GitHub **Source code** downloads contain source files, not the installed application. A `.sha256` checksum is available alongside the ZIP.
+
+The [release overview](https://github.com/edigonzales/hop-distributions/releases) lists newer builds when available. These instructions and the example results refer to the documented build above; newer snapshots may change behaviour.
+
+## 3. Extract into a new folder
+
+Extract the **entire** ZIP. Inside the extracted `hop` folder you should see `hop-gui.sh`, `hop-gui.bat`, `lib` and `plugins`. Do not move the launcher away from those folders or run it inside the ZIP viewer.
+
+For an upgrade, extract into a fresh folder instead of merging with an older installation. Keep your project data separately and open it with the new installation after checking compatibility.
+
+## 4. Start Hop GUI
+
+::: {.panel-tabset}
+
+### Linux / macOS
+
+In a terminal, change to the extracted `hop` folder, then start the launcher:
+
+```sh
+cd /path/to/extracted/hop
+./hop-gui.sh
+```
+
+Replace `/path/to/extracted/hop` with your actual folder. Quote paths containing spaces. If the launcher reports `Permission denied`, restore its executable permission:
+
+```sh
+chmod u+x hop-gui.sh
+./hop-gui.sh
+```
+
+To select a particular Java installation for this terminal session:
+
+```sh
+export HOP_JAVA_HOME="/path/to/jdk-21"
+"$HOP_JAVA_HOME/bin/java" -version
+./hop-gui.sh
+```
+
+On macOS, a registered Java 21 installation can be selected with:
+
+```sh
+export HOP_JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+./hop-gui.sh
+```
+
+### Windows
+
+Extract with **Extract All**, open PowerShell, then run:
+
+```powershell
+Set-Location "C:\path\to\extracted\hop"
+.\hop-gui.bat
+```
+
+To select a particular Java installation for this PowerShell session:
+
+```powershell
+$env:HOP_JAVA_HOME = "C:\path\to\jdk-21"
+& "$env:HOP_JAVA_HOME\bin\java.exe" -version
+.\hop-gui.bat
+```
+
+:::
+
+`HOP_JAVA_HOME` takes precedence over `JAVA_HOME`; otherwise the launcher uses Java available through your system path. Set these variables to the JDK folder, not to its `bin` folder or the `java` executable.
+
+## 5. Check the plugins
+
+1. Create a new pipeline in Hop GUI.
+2. Open the transform selection dialog and search for **Vector Reader** and **Vector Writer** under **Geospatial**.
+3. Add them to the canvas. Both should open their configuration dialogs without a missing-plugin error.
+4. Continue with the [vector format examples](examples.qmd): download the example bundle, extract it and open a pipeline.
+
+## If something does not start
+
+| Symptom | Check |
+|---|---|
+| Java is missing or has the wrong version | Check the selected Java using its full path; set `HOP_JAVA_HOME` and relaunch. |
+| Native library or architecture error | Match Java to the computer's architecture and check the terminal error; on Linux check GTK/SWT prerequisites. |
+| Vector transforms are missing | Confirm you extracted the GeoHop client ZIP, including `plugins`, into a new directory. |
+| Output cannot be created | Choose a writable output directory and create it before running the pipeline. |
+| Old plugin classes or conflicting versions | Use a fresh extraction instead of copying new files over an old installation. |
+
+For plugin-specific options, use the handbooks linked from the [plugin catalog](plugins.qmd).

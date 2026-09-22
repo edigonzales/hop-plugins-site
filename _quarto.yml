@@ -1,14 +1,18 @@
 project:
   type: website
   output-dir: _site
+  pre-render:
+    - python3 scripts/package-examples.py
   render:
     - index.qmd
     - docs.qmd
     - plugins.qmd
     - examples.qmd
+    - examples/*.qmd
   resources:
-    - assets/*.png
-    - assets/*.svg
+    - assets/**
+    - downloads/vector-formats.zip
+    - downloads/vector-formats/*.hpl
 
 website:
   title: GeoHop
@@ -18,19 +22,20 @@ website:
   navbar:
     title: GeoHop
     logo: assets/mark.svg
+    logo-alt: GeoHop
     background: white
     collapse-below: lg
     left:
       - href: index.qmd
         text: Home
       - href: docs.qmd
-        text: Docs
+        text: Getting Started
       - href: plugins.qmd
         text: Plugins
       - href: examples.qmd
         text: Examples
       - href: https://github.com/edigonzales/hop-plugins-site
-        text: Github
+        text: GitHub
         icon: box-arrow-up-right
   page-footer:
     left: '© 2026 GeoHop'
@@ -45,3 +50,4 @@ format:
       search-text-placeholder: Search docs…
     toc: false
     smooth-scroll: true
+    lightbox: true

@@ -117,3 +117,15 @@ a:hover { text-decoration: none; }
 .footer-heart { color: var(--blue); margin-left: .35em; }
 .navbar .nav-link:has(.bi-box-arrow-up-right) { display: inline-flex; align-items: center; gap: .4em; }
 .navbar .nav-link .bi-box-arrow-up-right { order: 1; font-size: .85em; }
+
+/* Documentation and runnable examples */
+.included-badge { display: inline-block; padding: .2rem .65rem; border-radius: 1rem; background: #edf5ff; color: #2059ac; font-size: .8rem; font-weight: 600; }
+body:not(.home-page) main.content { padding-bottom: 3rem; }
+body:not(.home-page) main.content img { border: 1px solid #e3ebf7; border-radius: 8px; }
+body:not(.home-page) main.content a:hover { text-decoration: underline; }
+.quarto-figure { margin: 1.5rem 0 2rem; }
+@media (max-width: 767px) {
+  main.content { min-width: 0; overflow-wrap: anywhere; }
+  main.content table { display: block; max-width: 100%; overflow-x: auto; }
+  main.content td code { white-space: normal; overflow-wrap: anywhere; }
+}
