@@ -8,10 +8,6 @@ toc: true
 
 Download one archive containing **Apache Hop {{< var hop-version >}} and all eleven [plugin projects](plugins.qmd)**. Geometry Type, Raster Type and the other shared dependencies are already installed. You do not need GDAL, Maven, a separate Python installation or a build from source.
 
-::: {.callout-note title="Snapshot distribution"}
-This is a community distribution containing pre-release plugins, not an official Apache binary release. The documented build is **{{< var distribution-version >}}**, released {{< var release-date >}}. Release information checked {{< var checked-date >}}. Try your pipelines with this version before upgrading an existing project.
-:::
-
 ## 1. Check the requirements
 
 - **Java 21 recommended.** The distribution's release checks also cover Java 25 on Linux, macOS and Windows. Choose a Java installation matching your operating system and CPU architecture (for example, ARM64 on Apple Silicon).
