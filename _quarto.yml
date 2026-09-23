@@ -38,7 +38,7 @@ website:
         text: GitHub
         icon: box-arrow-up-right
   page-footer:
-    left: '© 2026 GeoHop'
+    left: '© 2026 Stefan Ziegler'
     right: 'Open Source Always <i class="bi bi-heart-fill footer-heart" aria-hidden="true"></i>'
     border: false
 
