@@ -15,12 +15,12 @@ project:
     - downloads/vector-formats/*.hpl
 
 website:
-  title: GeoHop
+  title: ""
   search:
     location: navbar
     type: textbox
   navbar:
-    title: GeoHop
+    title: ""
     logo: assets/mark.svg
     logo-alt: GeoHop
     background: white
