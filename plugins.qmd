@@ -10,8 +10,6 @@ The catalog groups related transforms and workflow actions by project. For proje
 
 ## Vector Raster
 
-[Included in the distribution]{.included-badge}
-
 Read and write spatial vector data, and process rasters in Apache Hop. Includes tools for raster clipping, reprojection and zonal statistics.
 
 [GitHub repository](https://github.com/edigonzales/hop-vector-raster-plugin) · [Handbook (German)](https://edigonzales.github.io/hop-vector-raster-plugin/) · [Repository examples](https://github.com/edigonzales/hop-vector-raster-plugin/tree/main/examples)
@@ -20,8 +18,6 @@ Runnable examples are in the repository’s `examples/` folder.
 
 ## Data Inspector
 
-[Included in the distribution]{.included-badge}
-
 Inspect pipeline rows in tables and view geometry fields on a map. Explore multiple result layers and use sampling and cached results to investigate your data.
 
 [GitHub repository](https://github.com/edigonzales/hop-geometry-inspector-plugin) · [Handbook (English)](https://edigonzales.github.io/hop-geometry-inspector-plugin/data-inspector/main/) · [Repository examples](https://github.com/edigonzales/hop-geometry-inspector-plugin/tree/main/examples)
@@ -29,8 +25,6 @@ Inspect pipeline rows in tables and view geometry fields on a map. Explore multi
 Runnable examples are in the repository’s `examples/` folder.
 
 ## Geometry Calculator
-
-[Included in the distribution]{.included-badge}
 
 Calculate geometry measurements, coordinates and metadata for each input row. Check validity and extract diagnostic information from your geometries.
 
@@ -48,15 +42,11 @@ Edit geometries, evaluate spatial relationships and combine layers. Provides ope
 
 ## INTERLIS
 
-[Included in the distribution]{.included-badge}
-
 Read, transform, validate and write INTERLIS XTF data. Work with typed rows while preserving INTERLIS structures and supported curve geometries.
 
 [GitHub repository](https://github.com/edigonzales/hop-interlis-plugin)
 
 ## ili2db
-
-[Included in the distribution]{.included-badge}
 
 Run INTERLIS database operations for GeoPackage and PostgreSQL using ili2db. Available as both a pipeline transform and a workflow action.
 
@@ -64,15 +54,11 @@ Run INTERLIS database operations for GeoPackage and PostgreSQL using ili2db. Ava
 
 ## ilivalidator
 
-[Included in the distribution]{.included-badge}
-
 Validate INTERLIS transfer files in pipelines and workflows. Use validation results to report problems or control subsequent processing.
 
 [GitHub repository](https://github.com/edigonzales/hop-ilivalidator-plugin)
 
 ## Python / GraalPy
-
-[Included in the distribution]{.included-badge}
 
 Run Python code inside Apache Hop using an embedded GraalPy runtime. No separate Python installation is required.
 
@@ -94,15 +80,11 @@ These two projects provide values used by the other plugins. They are dependenci
 
 ### Geometry Type
 
-[Included in the distribution]{.included-badge}
-
 Adds the shared Geometry value type used by the spatial plugins. Allows geometry values to move between transforms in a pipeline.
 
 [GitHub repository](https://github.com/edigonzales/hop-geometry-type-plugin)
 
 ### Raster Type
-
-[Included in the distribution]{.included-badge}
 
 Adds the shared Raster value type used by the raster transforms. Carries raster sources and processing operations through a pipeline.
 
