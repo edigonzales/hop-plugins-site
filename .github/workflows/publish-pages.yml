@@ -2,6 +2,11 @@ name: Publish website to GitHub Pages
 
 on:
   workflow_dispatch:
+    inputs:
+      distribution-version:
+        description: 'Distribution version without v; leave empty for the latest prerelease'
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -28,6 +33,12 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: '1.9.37'
+
+      - name: Resolve distribution version
+        env:
+          DISTRIBUTION_VERSION: ${{ inputs['distribution-version'] }}
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/set-distribution-version.py
 
       - name: Render website
         run: quarto render

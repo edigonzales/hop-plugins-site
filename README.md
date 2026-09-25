@@ -31,7 +31,11 @@ No personal access token or `gh-pages` branch is needed.
 2. In **Settings → Pages → Build and deployment**, set **Source** to
    **GitHub Actions** (one-time setup).
 3. Open **Actions → Publish website to GitHub Pages → Run workflow**,
-   select `main`, and click **Run workflow**.
+   select `main`, optionally enter **distribution-version**, and click **Run workflow**.
+   Enter an exact version without the leading `v`, or leave the field empty to use
+   the latest published prerelease of `edigonzales/hop-distributions` (by publication
+   date). Whitespace-only input also selects the latest prerelease. API errors or
+   a missing prerelease fail the build; there is no fixed fallback version.
 4. The deployment's URL appears in the workflow run under the `github-pages`
    environment. Without a custom domain, it is
    <https://edigonzales.github.io/hop-plugins-site/>.
@@ -39,6 +43,11 @@ No personal access token or `gh-pages` branch is needed.
 The selected branch is what gets rendered and deployed; it must be allowed by
 any protection rules on the `github-pages` environment. Concurrent publications
 are serialized so an in-progress deployment is not cancelled.
+
+The workflow logs the resolved distribution version and updates the version,
+release link and ZIP download variables only in its build checkout before rendering.
+It uses the Apache Hop version from `_variables.yml` and does not commit these
+overrides or change verification dates and existing example evidence.
 
 The feature cards use the unmodified `geo-alt-fill`, `database`, and `gear` SVGs
 from [Bootstrap Icons v1.13.1](https://github.com/twbs/icons/tree/v1.13.1),
