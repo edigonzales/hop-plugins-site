@@ -1,6 +1,6 @@
 ---
 title: Home
-pagetitle: GeoHop — Spatial tools for Apache Hop
+pagetitle: Spatial Hop — Spatial tools for Apache Hop
 page-layout: full
 title-block-banner: false
 body-classes: home-page

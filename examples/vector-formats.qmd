@@ -14,7 +14,7 @@ Tested with Apache Hop **{{< var hop-version >}}**, distribution **{{< var distr
 
 ## Set up the example project once
 
-1. [Install GeoHop](../docs.qmd), then download and extract the whole example ZIP into a writable folder. Keep its `data`, `metadata`, `output` and pipeline files together.
+1. [Install Spatial Hop](../docs.qmd), then download and extract the whole example ZIP into a writable folder. Keep its `data`, `metadata`, `output` and pipeline files together.
 2. In Hop GUI, use the **Projects** controls to create a project named `vector-formats`. Set its **Home folder** to the extracted `vector-formats` folder and its configuration file to the included `project-config.json`. Use the existing configuration when prompted.
 3. Select that project. Open one of the `.hpl` files from its home folder.
 4. Use the included **local** pipeline run configuration. No environment or external database is required.

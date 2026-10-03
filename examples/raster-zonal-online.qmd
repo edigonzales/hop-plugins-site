@@ -1,6 +1,6 @@
 ---
 title: "Calculate building statistics from an online COG"
-description: "Runnable GeoHop raster tutorial with sample data and actual Hop screenshots."
+description: "Runnable Spatial Hop raster tutorial with sample data and actual Hop screenshots."
 toc: true
 ---
 

@@ -12,7 +12,7 @@ A raster travels through Hop as a **Raster value**, not one row per pixel. Read 
 
 ## Set up the example project once
 
-1. [Install GeoHop](../docs.qmd), then extract the complete ZIP into a writable folder. Keep `data`, `metadata`, `output` and all pipelines together.
+1. [Install Spatial Hop](../docs.qmd), then extract the complete ZIP into a writable folder. Keep `data`, `metadata`, `output` and all pipelines together.
 2. In Hop GUI, create a project named **raster-processing**. Set **Home folder** to the extracted `raster-processing` folder and use the included `project-config.json`. Use the existing configuration when prompted.
 3. Select the project, open a pipeline and select the included **local** run configuration.
 4. Run it. Every pipeline is independent. Only `zonal-online.hpl` needs internet; no database or separately installed GDAL is required.

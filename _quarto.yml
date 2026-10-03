@@ -24,7 +24,7 @@ website:
   navbar:
     title: ""
     logo: assets/mark.svg
-    logo-alt: GeoHop
+    logo-alt: Spatial Hop
     background: white
     collapse-below: lg
     left:

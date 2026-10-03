@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: Install Apache Hop with the GeoHop spatial plugins already included.
+description: Install Apache Hop with the Spatial Hop spatial plugins already included.
 toc: true
 ---
 
@@ -107,7 +107,7 @@ $env:HOP_JAVA_HOME = "C:\path\to\jdk-21"
 |---|---|
 | Java is missing or has the wrong version | Check the selected Java using its full path; set `HOP_JAVA_HOME` and relaunch. |
 | Native library or architecture error | Match Java to the computer's architecture and check the terminal error; on Linux check GTK/SWT prerequisites. |
-| Vector transforms are missing | Confirm you extracted the GeoHop client ZIP, including `plugins`, into a new directory. |
+| Vector transforms are missing | Confirm you extracted the Spatial Hop client ZIP, including `plugins`, into a new directory. |
 | Output cannot be created | Choose a writable output directory and create it before running the pipeline. |
 | Old plugin classes or conflicting versions | Use a fresh extraction instead of copying new files over an old installation. |
 

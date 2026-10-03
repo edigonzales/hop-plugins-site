@@ -1,12 +1,12 @@
 ---
 title: Examples
-description: Runnable GeoHop tutorials, organised by plugin and topic.
+description: Runnable Spatial Hop tutorials, organised by plugin and topic.
 toc: true
 ---
 
 Learn with complete Hop projects: small datasets, ready-to-run pipelines, actual GUI screenshots and checked results. Download a project once, then follow its tutorials.
 
-## Vector Raster
+## Vector Raster plugin {#vector-raster}
 
 The [Vector Raster plugin](plugins.qmd#vector-raster) handles spatial files and typed raster values. Choose a series:
 
@@ -23,7 +23,7 @@ Read three sample points and export six formats. Explore schema, encoding, layer
 ::: {.column width="50%"}
 ### Raster processing
 
-Read, inspect, clip, reproject and write rasters, then calculate building-height statistics from the **2019 nDSM**. Six tutorials, eight pipelines and **33 building polygons only**.
+Read, inspect, clip, reproject and write rasters, then calculate building-height statistics from the 2019 nDSM. Six tutorials, eight pipelines and 33 building polygons only.
 
 [Browse six raster tutorials](examples/raster-processing.qmd){.btn .btn-primary}
 
@@ -32,20 +32,3 @@ Read, inspect, clip, reproject and write rasters, then calculate building-height
 :::
 
 Seven raster pipelines run offline; the eighth demonstrates the same statistics using a public online COG. Each series documents its own tested setup and expected results.
-
-## Vector project setup {#set-up-the-example-project-once}
-
-The existing vector project instructions are now in [Vector formats → Set up the example project](examples/vector-formats.qmd#set-up-the-example-project-once).
-
-::: {#meet-the-sample-data}
-[Vector sample data](examples/vector-formats.qmd#meet-the-sample-data)
-:::
-::: {#choose-a-format}
-[Choose a vector format](examples/vector-formats.qmd#choose-a-format)
-:::
-::: {#shared-settings-and-checks}
-[Shared vector settings and checks](examples/vector-formats.qmd#shared-settings-and-checks)
-:::
-::: {#vector-reader-vector-writer}
-[Vector Reader → Vector Writer](examples/vector-formats.qmd#vector-reader-vector-writer)
-:::

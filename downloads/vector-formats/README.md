@@ -1,4 +1,4 @@
-# GeoHop vector format examples
+# Spatial Hop vector format examples
 
 Extract the whole bundle before opening a pipeline. Keep data/, output/ and the .hpl files together. Create a Hop project named vector-formats with its Home folder set to this extracted folder and use the included project-config.json. Select the project, open a .hpl in Hop GUI and run with the included local run configuration. Paths use ${PROJECT_HOME}; no project-specific absolute path is needed.
 

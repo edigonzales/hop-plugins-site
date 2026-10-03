@@ -1,4 +1,4 @@
-# Raster processing in GeoHop
+# Raster processing in Spatial Hop
 
 Extract the whole ZIP into a writable folder. In Hop GUI create the project
 `raster-processing`, select this folder as its Home folder and use the included

@@ -1,6 +1,6 @@
 # Synthetic sites
 
-Three invented point features in EPSG:2056 (CH1903+ / LV95), created for the GeoHop tutorials. These are not surveyed locations.
+Three invented point features in EPSG:2056 (CH1903+ / LV95), created for the Spatial Hop tutorials. These are not surveyed locations.
 
 | site_id | name | height_m | X | Y |
 |---|---|---|---|---|

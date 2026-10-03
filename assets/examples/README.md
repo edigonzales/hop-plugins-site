@@ -1,7 +1,7 @@
 # Hop screenshots
 
 Captured from the actual Hop GUI on macOS ARM64 with Java 21, Apache Hop 2.19.0,
-and GeoHop distribution 0.2.1-SNAPSHOT.build.35761791293.1 (22 September 2026).
+and Spatial Hop distribution 0.2.1-SNAPSHOT.build.35761791293.1 (22 September 2026).
 The screenshots show the pipelines and synthetic data in downloads/vector-formats.
 
 Each format has a pipeline canvas, its actual writer dialog, and metrics from a

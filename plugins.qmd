@@ -1,6 +1,6 @@
 ---
 title: Plugins
-description: The eleven plugin projects included in the GeoHop distribution.
+description: The eleven plugin projects included in the Spatial Hop distribution.
 toc: true
 ---
 

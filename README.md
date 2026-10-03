@@ -54,7 +54,7 @@ from [Bootstrap Icons v1.13.1](https://github.com/twbs/icons/tree/v1.13.1),
 embedded in `index.qmd`. Their MIT license is in
 [`assets/bootstrap-icons-LICENSE.txt`](assets/bootstrap-icons-LICENSE.txt).
 The navigation and footer also use Bootstrap Icons through Quarto.
-`assets/mark.svg` is the custom GeoHop logo.
+`assets/mark.svg` is the custom Spatial Hop logo.
 
 ## Example project and validation
 

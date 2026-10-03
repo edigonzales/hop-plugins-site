@@ -1,6 +1,6 @@
 ---
 title: "Calculate building height statistics"
-description: "Runnable GeoHop raster tutorial with sample data and actual Hop screenshots."
+description: "Runnable Spatial Hop raster tutorial with sample data and actual Hop screenshots."
 toc: true
 ---
 

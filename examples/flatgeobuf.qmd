@@ -47,7 +47,7 @@ The individual pipeline requires the data and project configuration from the com
 
 Save and run `flatgeobuf.hpl`. Expect one `.fgb` file containing three XY point features with all three attributes. Check the result by matching `site_id`, rather than comparing row positions: the spatial index can reorder features.
 
-Open the output in a FlatGeobuf-capable GIS or inspect it with `ogrinfo -al output/sites.fgb` if GDAL is installed. GDAL is an optional independent checker; it is not required by GeoHop. Vector Reader cannot read this format in the documented distribution.
+Open the output in a FlatGeobuf-capable GIS or inspect it with `ogrinfo -al output/sites.fgb` if GDAL is installed. GDAL is an optional independent checker; it is not required by Spatial Hop. Vector Reader cannot read this format in the documented distribution.
 
 ![Completed FlatGeobuf pipeline with processing metrics.](../assets/examples/flatgeobuf-result.png){fig-alt="Completed FlatGeobuf pipeline with processing metrics."}
 
