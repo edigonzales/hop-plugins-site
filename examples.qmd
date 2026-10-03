@@ -1,61 +1,51 @@
 ---
 title: Examples
-description: Read and write six vector formats with downloadable Apache Hop pipelines.
+description: Runnable GeoHop tutorials, organised by plugin and topic.
 toc: true
 ---
 
-## Vector Reader → Vector Writer
+Learn with complete Hop projects: small datasets, ready-to-run pipelines, actual GUI screenshots and checked results. Download a project once, then follow its tutorials.
 
-Start with three points, inspect their fields, and export them to a format your next tool can read. This series covers all six vector output formats in the [Vector Raster plugin](plugins.qmd#vector-raster), including the differences that matter when exchanging data.
+## Vector Raster
 
-Tested with Apache Hop **{{< var hop-version >}}**, distribution **{{< var distribution-version >}}**, on macOS ARM64 with Java 21. The examples use the local pipeline engine.
+The [Vector Raster plugin](plugins.qmd#vector-raster) handles spatial files and typed raster values. Choose a series:
 
-[Download all pipelines and sample data](downloads/vector-formats.zip){.btn .btn-primary}
+::: {.columns .example-series}
+::: {.column width="50%"}
+### Vector formats
 
-## Set up the example project once
+Read three sample points and export six formats. Explore schema, encoding, layers and format limitations.
 
-1. [Install GeoHop](docs.qmd), then download and extract the whole example ZIP into a writable folder. Keep its `data`, `metadata`, `output` and pipeline files together.
-2. In Hop GUI, use the **Projects** controls to create a project named `vector-formats`. Set its **Home folder** to the extracted `vector-formats` folder and its configuration file to the included `project-config.json`. Use the existing configuration when prompted.
-3. Select that project. Open one of the `.hpl` files from its home folder.
-4. Use the included **local** pipeline run configuration. No environment or external database is required.
+[Browse six vector tutorials](examples/vector-formats.qmd){.btn .btn-primary}
 
-All file settings use `${PROJECT_HOME}` plus a relative path. The plugins expect **local filesystem paths**; do not substitute a `file:` URI. The `output` directory is included and must remain present.
+[Download vector project](downloads/vector-formats.zip)
+:::
+::: {.column width="50%"}
+### Raster processing
 
-Each main pipeline reads `data/sites.gpkg`, layer `sites`, and writes one independent output. Create examples deliberately refuse to replace an existing output. To repeat a tutorial, choose a new output name or remove only that tutorial's generated dataset. Keep `data/sites.gpkg` unchanged.
+Read, inspect, clip, reproject and write rasters, then calculate building-height statistics from the **2019 nDSM**. Six tutorials, eight pipelines and **33 building polygons only**.
 
-## Meet the sample data
+[Browse six raster tutorials](examples/raster-processing.qmd){.btn .btn-primary}
 
-These are three invented XY points in **EPSG:2056 — CH1903+ / LV95**. They are tutorial fixtures, not surveyed locations.
-
-| site_id | name | height_m | Easting | Northing |
-|---|---|---|---|---|
-| 1 | Aare | 430.50 | 2600000 | 1200000 |
-| 2 | Brücke | 432.25 | 2600100 | 1200050 |
-| 3 | Park | 428.75 | 2600200 | 1200100 |
-
-`height_m` is an ordinary numeric attribute, **not** a Z coordinate. The expected extent is `(2600000, 1200000)–(2600200, 1200100)`. The geometry output field is named `geometry`. The umlaut in `Brücke` makes text-encoding problems visible.
-
-## Choose a format
-
-| Tutorial | Read | Write | What you will learn |
-|---|---|---|---|
-| [Shapefile](examples/shapefile.qmd) | Yes | Yes | Sidecar files, DBF names, encoding and a read-back check. |
-| [GeoPackage](examples/geopackage.qmd) | Yes | Yes | Create a file, add a layer and append features. |
-| [File Geodatabase](examples/filegdb.qmd) | Yes | Yes | Dataset selection, generated IDs and coordinate precision. |
-| [FlatGeobuf](examples/flatgeobuf.qmd) | No | Yes | Indexed output, feature order and empty geometry rules. |
-| [Native spatial Parquet](examples/parquet.qmd) | No | Yes | Typed columns and native GEOMETRY/GEOGRAPHY support. |
-| [ArcInfo GENERATE](examples/generate.qmd) | No | Yes | Point records, coordinate formatting and attribute limits. |
-
-“Read” refers to **Vector Reader**, not to every other tool that might support the format. FlatGeobuf, Parquet and GENERATE are output-only in this plugin.
-
-## Shared settings and checks
-
-In **Vector Reader**, select the file, load/select the layer, inspect its schema and set **Geometry output field** to `geometry`. In **Vector Writer**, select that geometry field and the desired output format. Keep one writer copy per output dataset.
-
-::: {.callout-warning title="Assigning a CRS does not reproject coordinates"}
-The CRS setting describes coordinates already in the input. Assigning EPSG:4326 to these EPSG:2056 coordinates would not turn them into longitude and latitude. Reproject coordinates in a suitable upstream operation when the target CRS differs.
+[Download raster project](downloads/raster-processing.zip)
+:::
 :::
 
-Check feature counts, attributes, geometry type, coordinates and CRS after conversion. A successful pipeline alone does not prove that every source characteristic survived: formats differ in their handling of Z/M dimensions, curves, empty geometries and field types.
+Seven raster pipelines run offline; the eighth demonstrates the same statistics using a public online COG. Each series documents its own tested setup and expected results.
 
-The tutorials show real Hop dialogs from the documented distribution. General transform behaviour is covered in the [Vector Raster handbook (German)](https://edigonzales.github.io/hop-vector-raster-plugin/); additional runnable pipelines live in the repository's [examples folder](https://github.com/edigonzales/hop-vector-raster-plugin/tree/main/examples).
+## Vector project setup {#set-up-the-example-project-once}
+
+The existing vector project instructions are now in [Vector formats → Set up the example project](examples/vector-formats.qmd#set-up-the-example-project-once).
+
+::: {#meet-the-sample-data}
+[Vector sample data](examples/vector-formats.qmd#meet-the-sample-data)
+:::
+::: {#choose-a-format}
+[Choose a vector format](examples/vector-formats.qmd#choose-a-format)
+:::
+::: {#shared-settings-and-checks}
+[Shared vector settings and checks](examples/vector-formats.qmd#shared-settings-and-checks)
+:::
+::: {#vector-reader-vector-writer}
+[Vector Reader → Vector Writer](examples/vector-formats.qmd#vector-reader-vector-writer)
+:::

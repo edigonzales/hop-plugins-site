@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pipeline>
+  <info>
+    <name>reproject-nearest</name>
+    <name_sync_with_filename>Y</name_sync_with_filename>
+    <pipeline_type>Normal</pipeline_type>
+    <parameters />
+  </info>
+  <order>
+    <hop>
+      <from>Read nDSM</from>
+      <to>Reproject NEAREST</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Reproject NEAREST</from>
+      <to>Inspect raster</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Inspect raster</from>
+      <to>Write GEOTIFF</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Write GEOTIFF</from>
+      <to>Remove raster value</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <transform>
+    <name>Read nDSM</name>
+    <type>SOGIS_RASTER_READER</type>
+    <copies>1</copies>
+    <distribute>Y</distribute>
+    <version>1</version>
+    <rasterField>raster</rasterField>
+    <source>${PROJECT_HOME}/data/ndsm-2019.tif</source>
+    <GUI>
+      <xloc>100</xloc>
+      <yloc>130</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Reproject NEAREST</name>
+    <type>SOGIS_RASTER_VALUE_REPROJECT</type>
+    <copies>1</copies>
+    <distribute>Y</distribute>
+    <version>1</version>
+    <rasterField>raster</rasterField>
+    <targetCrs>EPSG:3857</targetCrs>
+    <resolutionX>1</resolutionX>
+    <resolutionY>1</resolutionY>
+    <extentMode>AUTO</extentMode>
+    <interpolation>NEAREST</interpolation>
+    <outputType>FLOAT32</outputType>
+    <GUI>
+      <xloc>250</xloc>
+      <yloc>130</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Inspect raster</name>
+    <type>SOGIS_RASTER_INFO</type>
+    <copies>1</copies>
+    <distribute>Y</distribute>
+    <version>1</version>
+    <rasterField>raster</rasterField>
+    <prefix>info_</prefix>
+    <infoFields>width height crs bands</infoFields>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>130</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Write GEOTIFF</name>
+    <type>SOGIS_RASTER_WRITER</type>
+    <copies>1</copies>
+    <distribute>Y</distribute>
+    <version>1</version>
+    <rasterField>raster</rasterField>
+    <output>${PROJECT_HOME}/output/reproject-nearest.tif</output>
+    <outputField>N</outputField>
+    <format>GEOTIFF</format>
+    <compression>Deflate</compression>
+    <addOverviews>Y</addOverviews>
+    <overviews>AUTO</overviews>
+    <overviewResampling>AVERAGE</overviewResampling>
+    <overwrite>N</overwrite>
+    <prefix>out_</prefix>
+    <GUI>
+      <xloc>550</xloc>
+      <yloc>130</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Remove raster value</name>
+    <type>SelectValues</type>
+    <copies>1</copies>
+    <distribute>Y</distribute>
+    <fields>
+      <select_unspecified>Y</select_unspecified>
+      <remove>
+        <name>raster</name>
+      </remove>
+    </fields>
+    <GUI>
+      <xloc>700</xloc>
+      <yloc>130</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </transform>
+  <transform_error_handling />
+</pipeline>

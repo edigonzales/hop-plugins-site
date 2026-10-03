@@ -82,3 +82,34 @@ and results when updating the distribution or changing the example settings.
 
 Before publishing: run `quarto render`, then `python3 scripts/check-site.py`, and
 inspect desktop/mobile layouts. The manual publishing workflow remains unchanged.
+
+
+## Raster tutorials
+
+The Examples hub groups projects by plugin and topic. The existing vector tutorial
+URLs remain available; their shared setup now lives on `examples/vector-formats.qmd`.
+The raster project includes eight independent pipelines, only building polygons,
+and a lossless crop of the explicitly selected 2019 nDSM. Never substitute the
+2023 raster when updating these tutorials.
+
+`python3 scripts/package-examples.py` builds both downloadable projects from input
+allowlists. Outputs and audit data must not be packaged. The normal site check also
+checks raster bundle hashes, building-only selection and the ZonalStats source URLs.
+
+Full raster verification (Python with GDAL >= 3.13, NumPy, Shapely; Java 21):
+
+```sh
+python3 scripts/verify-raster-examples.py --hop-home /path/to/hop --online
+```
+
+Set `HOP_JAVA_HOME`, `GDAL_DATA` and `PROJ_DATA` when required by the local installation.
+Omit `--online` for offline verification. The verifier extracts the published ZIP
+into a temporary project with a space in its path, runs all requested pipelines,
+checks data independently, and leaves logs plus `results.json` in its reported folder.
+Synthetic fixtures cover NoData, valid zero, polygon holes, outside zones and both
+interpolation methods. Existing-output protection and network failure are checked.
+
+The raster test record is fixed in `downloads/raster-processing/tested-environment.json`.
+Do not update its test date or artifact hashes merely because a newer distribution
+was selected by the publishing workflow. Recapture GUI screenshots after UI changes;
+see `assets/examples/raster/README.md` for dimensions and provenance.

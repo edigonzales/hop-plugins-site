@@ -16,3 +16,17 @@ with zipfile.ZipFile(root / 'downloads/vector-formats.zip', 'w', zipfile.ZIP_DEF
         info.compress_type = zipfile.ZIP_DEFLATED
         archive.writestr(info, path.read_bytes())
 print('Packaged', len(files), 'example project files')
+
+# Raster project: use an explicit input allowlist; never include generated outputs.
+source = root / 'downloads/raster-processing'
+files = sorted(source.glob('*.hpl')) + [source / n for n in
+    ['README.md', 'LICENSE.txt', 'project-config.json', 'tested-environment.json', 'expected-statistics.json',
+     'data/README.md', 'data/buildings.gpkg', 'data/ndsm-2019.tif', 'data/provenance.json',
+     'metadata/pipeline-run-configuration/local.json', 'output/README.txt']]
+with zipfile.ZipFile(root / 'downloads/raster-processing.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+    for path in files:
+        info = zipfile.ZipInfo('raster-processing/' + path.relative_to(source).as_posix(), (2026, 10, 3, 0, 0, 0))
+        info.external_attr = 0o100644 << 16
+        info.compress_type = zipfile.ZIP_DEFLATED
+        archive.writestr(info, path.read_bytes())
+print('Packaged', len(files), 'raster project files')

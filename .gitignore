@@ -35,3 +35,8 @@ replay_pid*
 !/downloads/vector-formats/output/README.txt
 /downloads/vector-formats/audit/
 /downloads/vector-formats/.hop/
+/downloads/raster-processing/output/*
+!/downloads/raster-processing/output/README.txt
+/downloads/raster-processing/audit/
+/downloads/raster-processing/.hop/
+/scripts/__pycache__/

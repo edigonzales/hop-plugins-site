@@ -1,0 +1,298 @@
+{
+  "vector_source": "https://files.geo.so.ch/ch.so.agi.av.mopublic/aktuell/2549.ch.so.agi.av.mopublic.gpkg.zip",
+  "vector_zip_sha256": "a069a75e6e37a8e236bc439ced44294eeeb9dc1f9a3e054ef94ac195885869d6",
+  "vector_last_modified": "Fri, 02 Oct 2026 21:17:19 GMT",
+  "raster_source": "https://files.geo.so.ch/ch.so.agi.lidar_2019.ndsm_buildings/aktuell/ch.so.agi.lidar_2019.ndsm_buildings.tif",
+  "retrieved": "2026-10-03",
+  "buildings": 33,
+  "building_extent": [
+    2611464.751,
+    2612025.043,
+    1233370.955,
+    1234527.781
+  ],
+  "source_window": [
+    77819,
+    75848,
+    2322,
+    4709
+  ],
+  "raster": {
+    "description": "ndsm-2019.tif",
+    "driverShortName": "GTiff",
+    "driverLongName": "GeoTIFF",
+    "files": [
+      "ndsm-2019.tif"
+    ],
+    "size": [
+      2322,
+      4709
+    ],
+    "coordinateSystem": {
+      "wkt": "PROJCRS[\"CH1903+ / LV95\",\n    BASEGEOGCRS[\"CH1903+\",\n        DATUM[\"CH1903+\",\n            ELLIPSOID[\"Bessel 1841\",6377397.155,299.1528128,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4150]],\n    CONVERSION[\"Swiss Oblique Mercator 1995\",\n        METHOD[\"Hotine Oblique Mercator (variant B)\",\n            ID[\"EPSG\",9815]],\n        PARAMETER[\"Latitude of projection centre\",46.9524055555556,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8811]],\n        PARAMETER[\"Longitude of projection centre\",7.43958333333333,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8812]],\n        PARAMETER[\"Azimuth at projection centre\",90,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8813]],\n        PARAMETER[\"Angle from Rectified to Skew Grid\",90,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8814]],\n        PARAMETER[\"Scale factor at projection centre\",1,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8815]],\n        PARAMETER[\"Easting at projection centre\",2600000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8816]],\n        PARAMETER[\"Northing at projection centre\",1200000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8817]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Cadastre, engineering survey, topographic mapping (large and medium scale).\"],\n        AREA[\"Liechtenstein; Switzerland.\"],\n        BBOX[45.81,5.95,47.81,10.5]],\n    ID[\"EPSG\",2056]]",
+      "dataAxisToSRSAxisMapping": [
+        1,
+        2
+      ]
+    },
+    "geoTransform": [
+      2611454.75,
+      0.25,
+      0.0,
+      1234538.0,
+      0.0,
+      -0.25
+    ],
+    "metadata": {
+      "": {
+        "AREA_OR_POINT": "Area"
+      },
+      "IMAGE_STRUCTURE": {
+        "COMPRESSION": "DEFLATE",
+        "INTERLEAVE": "BAND",
+        "PREDICTOR": "3"
+      }
+    },
+    "cornerCoordinates": {
+      "upperLeft": [
+        2611454.75,
+        1234538.0
+      ],
+      "lowerLeft": [
+        2611454.75,
+        1233360.75
+      ],
+      "lowerRight": [
+        2612035.25,
+        1233360.75
+      ],
+      "upperRight": [
+        2612035.25,
+        1234538.0
+      ],
+      "center": [
+        2611745.0,
+        1233949.375
+      ]
+    },
+    "wgs84Extent": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            7.5899735,
+            47.2616499
+          ],
+          [
+            7.5899436,
+            47.251061
+          ],
+          [
+            7.597612,
+            47.2510508
+          ],
+          [
+            7.5976433,
+            47.2616396
+          ],
+          [
+            7.5899735,
+            47.2616499
+          ]
+        ]
+      ]
+    },
+    "bands": [
+      {
+        "band": 1,
+        "block": [
+          256,
+          256
+        ],
+        "type": "Float32",
+        "colorInterpretation": "Gray",
+        "noDataValue": -9999.0,
+        "metadata": {}
+      }
+    ],
+    "stac": {
+      "proj:shape": [
+        4709,
+        2322
+      ],
+      "proj:wkt2": "PROJCRS[\"CH1903+ / LV95\",\n    BASEGEOGCRS[\"CH1903+\",\n        DATUM[\"CH1903+\",\n            ELLIPSOID[\"Bessel 1841\",6377397.155,299.1528128,\n                LENGTHUNIT[\"metre\",1]]],\n        PRIMEM[\"Greenwich\",0,\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        ID[\"EPSG\",4150]],\n    CONVERSION[\"Swiss Oblique Mercator 1995\",\n        METHOD[\"Hotine Oblique Mercator (variant B)\",\n            ID[\"EPSG\",9815]],\n        PARAMETER[\"Latitude of projection centre\",46.9524055555556,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8811]],\n        PARAMETER[\"Longitude of projection centre\",7.43958333333333,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8812]],\n        PARAMETER[\"Azimuth at projection centre\",90,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8813]],\n        PARAMETER[\"Angle from Rectified to Skew Grid\",90,\n            ANGLEUNIT[\"degree\",0.0174532925199433],\n            ID[\"EPSG\",8814]],\n        PARAMETER[\"Scale factor at projection centre\",1,\n            SCALEUNIT[\"unity\",1],\n            ID[\"EPSG\",8815]],\n        PARAMETER[\"Easting at projection centre\",2600000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8816]],\n        PARAMETER[\"Northing at projection centre\",1200000,\n            LENGTHUNIT[\"metre\",1],\n            ID[\"EPSG\",8817]]],\n    CS[Cartesian,2],\n        AXIS[\"(E)\",east,\n            ORDER[1],\n            LENGTHUNIT[\"metre\",1]],\n        AXIS[\"(N)\",north,\n            ORDER[2],\n            LENGTHUNIT[\"metre\",1]],\n    USAGE[\n        SCOPE[\"Cadastre, engineering survey, topographic mapping (large and medium scale).\"],\n        AREA[\"Liechtenstein; Switzerland.\"],\n        BBOX[45.81,5.95,47.81,10.5]],\n    ID[\"EPSG\",2056]]",
+      "proj:epsg": 2056,
+      "proj:projjson": {
+        "$schema": "https://proj.org/schemas/v0.7/projjson.schema.json",
+        "type": "ProjectedCRS",
+        "name": "CH1903+ / LV95",
+        "base_crs": {
+          "type": "GeographicCRS",
+          "name": "CH1903+",
+          "datum": {
+            "type": "GeodeticReferenceFrame",
+            "name": "CH1903+",
+            "ellipsoid": {
+              "name": "Bessel 1841",
+              "semi_major_axis": 6377397.155,
+              "inverse_flattening": 299.1528128
+            }
+          },
+          "coordinate_system": {
+            "subtype": "ellipsoidal",
+            "axis": [
+              {
+                "name": "Geodetic latitude",
+                "abbreviation": "Lat",
+                "direction": "north",
+                "unit": "degree"
+              },
+              {
+                "name": "Geodetic longitude",
+                "abbreviation": "Lon",
+                "direction": "east",
+                "unit": "degree"
+              }
+            ]
+          },
+          "id": {
+            "authority": "EPSG",
+            "code": 4150
+          },
+          "remarks": "Replaces CH1903."
+        },
+        "conversion": {
+          "name": "Swiss Oblique Mercator 1995",
+          "method": {
+            "name": "Hotine Oblique Mercator (variant B)",
+            "id": {
+              "authority": "EPSG",
+              "code": 9815
+            }
+          },
+          "parameters": [
+            {
+              "name": "Latitude of projection centre",
+              "value": 46.9524055555556,
+              "unit": "degree",
+              "id": {
+                "authority": "EPSG",
+                "code": 8811
+              }
+            },
+            {
+              "name": "Longitude of projection centre",
+              "value": 7.43958333333333,
+              "unit": "degree",
+              "id": {
+                "authority": "EPSG",
+                "code": 8812
+              }
+            },
+            {
+              "name": "Azimuth at projection centre",
+              "value": 90,
+              "unit": "degree",
+              "id": {
+                "authority": "EPSG",
+                "code": 8813
+              }
+            },
+            {
+              "name": "Angle from Rectified to Skew Grid",
+              "value": 90,
+              "unit": "degree",
+              "id": {
+                "authority": "EPSG",
+                "code": 8814
+              }
+            },
+            {
+              "name": "Scale factor at projection centre",
+              "value": 1,
+              "unit": "unity",
+              "id": {
+                "authority": "EPSG",
+                "code": 8815
+              }
+            },
+            {
+              "name": "Easting at projection centre",
+              "value": 2600000,
+              "unit": "metre",
+              "id": {
+                "authority": "EPSG",
+                "code": 8816
+              }
+            },
+            {
+              "name": "Northing at projection centre",
+              "value": 1200000,
+              "unit": "metre",
+              "id": {
+                "authority": "EPSG",
+                "code": 8817
+              }
+            }
+          ]
+        },
+        "coordinate_system": {
+          "subtype": "Cartesian",
+          "axis": [
+            {
+              "name": "Easting",
+              "abbreviation": "E",
+              "direction": "east",
+              "unit": "metre"
+            },
+            {
+              "name": "Northing",
+              "abbreviation": "N",
+              "direction": "north",
+              "unit": "metre"
+            }
+          ]
+        },
+        "scope": "Cadastre, engineering survey, topographic mapping (large and medium scale).",
+        "area": "Liechtenstein; Switzerland.",
+        "bbox": {
+          "south_latitude": 45.81,
+          "west_longitude": 5.95,
+          "north_latitude": 47.81,
+          "east_longitude": 10.5
+        },
+        "id": {
+          "authority": "EPSG",
+          "code": 2056
+        }
+      },
+      "proj:transform": [
+        0.25,
+        0.0,
+        2611454.75,
+        0.0,
+        -0.25,
+        1234538.0
+      ],
+      "raster:bands": [
+        {
+          "data_type": "float32",
+          "nodata": -9999.0
+        }
+      ],
+      "eo:bands": [
+        {
+          "name": "b1",
+          "description": "Gray"
+        }
+      ]
+    }
+  },
+  "files": {
+    "buildings.gpkg": "7fd0a98f7c14b248102103d6a358154bef7d8d5200dde33d09de8dc9cb66d617",
+    "ndsm-2019.tif": "2dfeb5d48d9b00c1cccca7ea482d94d525710c0d379dddefeddcbb4049b72de1"
+  },
+  "raster_last_modified": "Tue, 19 Mar 2024 08:52:38 GMT",
+  "data_terms": "https://files.geo.so.ch/nutzungsbedingungen.html",
+  "building_id": "Copy of original T_Id primary key"
+}

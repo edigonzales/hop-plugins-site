@@ -1,0 +1,9 @@
+{
+  "name": "local",
+  "engineRunConfiguration": {
+    "Local": {
+      "safe_mode": true,
+      "rowset_size": 1000
+    }
+  }
+}

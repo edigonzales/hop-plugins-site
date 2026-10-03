@@ -4,13 +4,13 @@ description: "A runnable Apache Hop tutorial for Shapefile."
 toc: true
 ---
 
-[All vector examples](../examples.qmd) · [Vector Raster plugin](../plugins.qmd#vector-raster)
+[All vector examples](vector-formats.qmd) · [Vector Raster plugin](../plugins.qmd#vector-raster)
 
 Export the three sites as an ESRI Shapefile while preserving the names and numeric attributes. Then read the generated file back through Vector Reader.
 
 ## Before you begin
 
-[Download and set up the example project](../examples.qmd#set-up-the-example-project-once). This walkthrough uses Apache Hop **{{< var hop-version >}}**, distribution **{{< var distribution-version >}}**, with the **local** run configuration. Keep the supplied input unchanged and use a writable `output` directory.
+[Download and set up the example project](vector-formats.qmd#set-up-the-example-project-once). This walkthrough uses Apache Hop **{{< var hop-version >}}**, distribution **{{< var distribution-version >}}**, with the **local** run configuration. Keep the supplied input unchanged and use a writable `output` directory.
 
 [Download shapefile.hpl](../downloads/vector-formats/shapefile.hpl) · [Complete project ZIP](../downloads/vector-formats.zip)
 

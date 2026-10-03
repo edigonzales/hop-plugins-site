@@ -1,0 +1,64 @@
+---
+title: Raster processing
+description: Eight runnable Hop pipelines for GeoTIFF, COG, clipping, resampling and building-height statistics.
+toc: true
+---
+
+[All examples](../examples.qmd) · [Vector Raster plugin](../plugins.qmd#vector-raster)
+
+A raster travels through Hop as a **Raster value**, not one row per pixel. Read a source, derive a clip or a reprojection, then write a file or calculate statistics. The project includes all six raster transforms: Reader, Info, Clip, Reproject, Writer and ZonalStats.
+
+[Download all eight pipelines and data](../downloads/raster-processing.zip){.btn .btn-primary}
+
+## Set up the example project once
+
+1. [Install GeoHop](../docs.qmd), then extract the complete ZIP into a writable folder. Keep `data`, `metadata`, `output` and all pipelines together.
+2. In Hop GUI, create a project named **raster-processing**. Set **Home folder** to the extracted `raster-processing` folder and use the included `project-config.json`. Use the existing configuration when prompted.
+3. Select the project, open a pipeline and select the included **local** run configuration.
+4. Run it. Every pipeline is independent. Only `zonal-online.hpl` needs internet; no database or separately installed GDAL is required.
+
+All local paths use `${PROJECT_HOME}`. Keep the supplied data unchanged. Overwrite is disabled: to repeat an example, choose a new output name or remove only its previously generated outputs. The polygon example creates one TIFF per building.
+
+## Choose a tutorial
+
+| Tutorial | Pipelines | Result |
+|---|---|---|
+| [Read, inspect and write](raster-read-write.qmd) | `read-write-geotiff.hpl`, `read-write-cog.hpl` | GeoTIFF and COG with internal overviews. |
+| [Clip by bounding box](raster-clip-bbox.qmd) | `clip-bbox.hpl` | A 250 × 250 m crop on the original grid. |
+| [Clip by building polygon](raster-clip-polygon.qmd) | `clip-polygon.hpl` | 33 separate, masked TIFFs. |
+| [Reproject and resample](raster-reproject.qmd) | `reproject-nearest.hpl`, `reproject-bilinear.hpl` | EPSG:3857 rasters with 1-unit pixels. |
+| [Building height statistics](raster-zonal.qmd) | `zonal.hpl` | 33 building records with height statistics. |
+| [Statistics from an online COG](raster-zonal-online.qmd) | `zonal-online.hpl` | The same analysis using HTTP range reads. |
+
+## Meet the sample data
+
+**Buildings only.** `data/buildings.gpkg`, layer `buildings`, contains 33 polygons selected with `art_txt = 'Gebaeude'` from the [MOpublic dataset 2549](https://files.geo.so.ch/ch.so.agi.av.mopublic/aktuell/2549.ch.so.agi.av.mopublic.gpkg.zip). Other land-cover classes are not included. The ordinary `building_id` attribute copies the original `T_Id` primary key so it remains available in Hop and output datasets. Original attributes, INTERLIS identifiers and coordinates are retained.
+
+**2019 nDSM.** `data/ndsm-2019.tif` is a losslessly compressed crop of the [normalised building surface model](https://files.geo.so.ch/ch.so.agi.lidar_2019.ndsm_buildings/aktuell/ch.so.agi.lidar_2019.ndsm_buildings.tif), not the 2023 raster. The crop adds a 10-metre margin around the buildings, rounded to source pixel boundaries. No values were resampled or reprojected.
+
+| Property | Value |
+|---|---|
+| CRS | EPSG:2056 — CH1903+ / LV95 |
+| Size | 2322 × 4709 pixels, one band |
+| Pixel size | 0.25 × 0.25 metres |
+| Extent | E 2611454.75–2612035.25; N 1233360.75–1234538.00 |
+| Numeric type / NoData | Float32 / `-9999` |
+| Measurements | Normalised heights in metres above terrain |
+
+The current building inventory and the 2019 raster describe different dates. Four buildings have no valid raster samples in this snapshot. Their statistics remain null with status `NO_VALID_PIXELS`; they are not assigned a height of zero. Even a valid maximum is a sampled nDSM value inside a footprint, not an exact surveyed roof height.
+
+Source: **Kanton Solothurn, Amt für Geoinformation**, MOpublic and LiDAR 2019. [Source-data terms](https://files.geo.so.ch/nutzungsbedingungen.html) allow commercial and non-commercial use; attribution is recommended. The ZIP contains full provenance and checksums in `data/README.md` and `data/provenance.json`.
+
+## Tested setup and shared checks
+
+Tested **3 October 2026**, using Apache Hop **2.19.0**, Temurin Java **21.0.10**, macOS ARM64 and the installed spatial plugin builds. The ZIP's `tested-environment.json` records their exact SHA-256 hashes. This is a fixed test record, separate from the website's latest distribution download. Snapshot versions can share a name while containing different builds.
+
+All eight pipelines were executed from an extracted project with a space in its path. GDAL 3.13.3, NumPy and Shapely independently checked output rasters, masks, CRS and statistics. Online and local statistics matched: **29 OK, 4 NO_VALID_PIXELS**. Controlled fixtures also checked valid zero, NoData, polygon holes, outside zones, interpolation, existing-file protection and network failure.
+
+Reader creates a source description. Clip and Reproject derive raster values; pixel evaluation happens at a consumer such as Writer or ZonalStats. Keep one writer copy per destination, avoid filename collisions and inspect the result rather than relying only on a green pipeline status.
+
+::: {.callout-warning title="Assigning a CRS is not reprojection"}
+An explicit geometry CRS describes the coordinates already present. Raster Reproject actually transforms the grid. Pixel sizes are expressed in the target CRS units; EPSG:3857 uses map metres with latitude-dependent scale distortion.
+:::
+
+[Raster handbook (German)](https://edigonzales.github.io/hop-vector-raster-plugin/benutzerhandbuch/main/index.html#raster-clip) · [Additional repository examples](https://github.com/edigonzales/hop-vector-raster-plugin/tree/main/examples)

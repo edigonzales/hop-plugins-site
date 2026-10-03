@@ -13,6 +13,8 @@ project:
     - assets/**
     - downloads/vector-formats.zip
     - downloads/vector-formats/*.hpl
+    - downloads/raster-processing.zip
+    - downloads/raster-processing/*.hpl
 
 website:
   title: ""
